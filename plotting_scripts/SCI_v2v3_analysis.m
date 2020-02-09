@@ -65,20 +65,27 @@ for i = 1:4
     end
 end
 
+v2empty(:)=v2empty(:)/23*100;
+v2sngl(:)=v2sngl(:)/23*100;
+v2dbl(:)=v2dbl(:)/23*100;
+v3empty(:)=v3empty(:)/22*100;
+v3sngl(:)=v3sngl(:)/22*100;
+v3dbl(:)=v3dbl(:)/22*100;
+
 figure(1)
 subplot(1,3,1);
-boxplot([v2empty,v3empty],'Labels',{'old','new'});
+boxplot([v2empty,v3empty],'Notch','on','Labels',{'old','new'});
 title('non-loaded');
-ylabel('Channels');
+ylabel('% Channels');
 subplot(1,3,2);
-boxplot([v2sngl,v3sngl],'Labels',{'old','new'});
+boxplot([v2sngl,v3sngl],'Notch','on','Labels',{'old','new'});
 title('singly-loaded');
-ylabel('Channels');
+ylabel('% Channels');
 subplot(1,3,3);
-boxplot([v2dbl,v3dbl],'Labels',{'old','new'});
+boxplot([v2dbl,v3dbl],'Notch','on','Labels',{'old','new'});
 title('doubly-loaded');
-ylabel('Channels');
+ylabel('% Channels');
 
 
 %addpath('C:\Users\Trevor Chan\Desktop');
-%PrettyFig
+PrettyFig
